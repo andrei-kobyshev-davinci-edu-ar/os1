@@ -4,6 +4,7 @@
 ### Realizado por: Andrei Kobyshev, Dmitriy Vedrov
 
 ---
+### [View on github](https://github.com/andrei-kobyshev-davinci-edu-ar/os1/blob/main/README.md)
 
 ## Introducción
 
