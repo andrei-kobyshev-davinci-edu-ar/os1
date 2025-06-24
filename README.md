@@ -314,6 +314,8 @@ smbclient -L localhost -N
     - Asegurarse de que la red esté configurada como "Privada"
     - Conectarse directamente por IP: `\\192.168.1.12`
 
+![img_10.png](img/img_10.png)
+
 2. Para el acceso de invitados:
     - Windows 10/11 bloquea el acceso anónimo por defecto
     - Al solicitar la contraseña use: smbguest / guest
@@ -326,6 +328,9 @@ Pruebas de niveles de acceso:
     - Al solicitar contraseña ingresé: smbguest / guest
     - Creé un archivo - exitoso
 
+
+![img_11.png](img/img_11.png)
+
 2. **Acceso como user-davinci:**
     - Abrí `\\192.168.1.12\User`
     - Ingresé user-davinci/user-davinci
@@ -333,6 +338,9 @@ Pruebas de niveles de acceso:
     - Abrí `\\192.168.1.12\Admin`
     - Pude leer secret.txt
     - Intenté crear un archivo - ¡acceso denegado!
+
+![img_12.png](img/img_12.png)
+![img_13.png](img/img_13.png)
 
 3. **Acceso como admin-davinci:**
     - Me reconecté como admin-davinci
