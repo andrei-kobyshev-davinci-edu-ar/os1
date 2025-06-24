@@ -28,6 +28,8 @@ La configuración del adaptador de red en modo Bridge es un momento crítico. A 
 - Ser visible para todos los dispositivos en la red local
 - Comportarse como si fuera una computadora física real conectada a la red
 
+![img.png](img/img_14.png)
+
 Sin esta configuración, otras computadoras simplemente no podrían encontrar nuestro servidor Samba en la red. La máquina virtual estaría aislada detrás de NAT, y el acceso a ella solo sería posible desde el sistema host.
 
 ### Instalación de Ubuntu Server
