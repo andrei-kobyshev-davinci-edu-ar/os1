@@ -45,7 +45,7 @@ ip a
 # Desde mi computadora principal configuré las claves SSH
 ssh-copy-id samba@192.168.1.12
 ```
-![img.png](img.png)
+![img.png](img/img.png)
 El comando ssh-copy-id copia mi clave SSH pública al servidor en el archivo authorized_keys. Esto permite conectarse sin ingresar la contraseña cada vez: la autenticación se realiza mediante clave. Conveniente y seguro: no es necesario ingresar constantemente la contraseña, y nadie podrá adivinar la contraseña por fuerza bruta.
 
 Me conecté al servidor y ejecuté byobu:
@@ -79,7 +79,7 @@ systemctl status smbd
 # active (running)
 ```
 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
 
 Vi la advertencia "Referenced but unset environment variable" - busqué en Google y resultó ser una característica conocida de Ubuntu 24.04. La advertencia está relacionada con la configuración de systemd y no afecta el funcionamiento de Samba. Lo principal es que los servicios están en estado "active (running)" y "ready to serve connections".
 
@@ -107,7 +107,7 @@ usermod -aG sambagroup user-davinci
 useradd -M -s /sbin/nologin smbguest
 ```
 
-![img_2.png](img_2.png)
+![img_2.png](img/img_2.png)
 
 Parámetros de useradd:
 - `-M` - no crear directorio home (usuarios solo para Samba, no para iniciar sesión en el sistema)
@@ -133,7 +133,7 @@ smbpasswd -e user-davinci
 smbpasswd -e smbguest
 ```
 
-![img_3.png](img_3.png)
+![img_3.png](img/img_3.png)
 
 
 
@@ -178,7 +178,7 @@ Nota: La carpeta Guest tiene permisos especiales (777 y nobody:nogroup) para gar
 
 
 
-![img_4.png](img_4.png)
+![img_4.png](img/img_4.png)
 
 
 
@@ -269,7 +269,7 @@ testparm
 systemctl restart smbd nmbd
 ```
 
-![img_5.png](img_5.png)
+![img_5.png](img/img_5.png)
 
 ## Configuración del firewall
 
@@ -279,7 +279,7 @@ Abrí los puertos necesarios:
 ufw allow samba
 ufw status
 ```
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)
 
 
 ## Configuración adicional para Windows 10/11
@@ -302,7 +302,7 @@ Estas configuraciones ayudan a Windows a encontrar el servidor en la red. Si el 
 smbclient -L localhost -N
 ```
 
-![img_7.png](img_7.png)
+![img_7.png](img/img_7.png)
 
 ### Pruebas desde Windows
 
@@ -343,7 +343,7 @@ Pruebas de niveles de acceso:
 smbstatus
 ```
 
-![img_9.png](img_9.png)
+![img_9.png](img/img_9.png)
 
 ¡Se puede ver que user-davinci tiene solo acceso RDONLY (solo lectura) a la carpeta admin!
 
@@ -478,4 +478,4 @@ ufw allow samba
 systemctl restart smbd nmbd
 ```
 
-![oldterm.gif](oldterm.gif)
+![oldterm.gif](img/oldterm.gif)
